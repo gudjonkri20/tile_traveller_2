@@ -14,6 +14,9 @@ available actions.
 
 When a victory has been reached, the program also prints out how many coins the player retrieved.'''
 
+
+
+
 def lever_spot(col, row, coin, no_direction):
     if no_direction != False:
         if col == 1 and row == 2:
@@ -22,7 +25,7 @@ def lever_spot(col, row, coin, no_direction):
                 coin += 1
                 print ("You received 1 coin, your total is now "+str(coin)+".")
         elif col == 2 and row == 2:
-            lever = (input("Pull a lever (y/n):").lower())
+            lever = (input("Pull a lever (y/n): ").lower())
             if lever == 'y':
                 coin += 1
                 print ("You received 1 coin, your total is now "+str(coin)+".")
@@ -57,16 +60,13 @@ def main():
     col = 1
     coin = 0
     no_direction = True
-
-    
-
     while not victory:
         valid_directions = find_directions(col, row)
         coin = lever_spot(col, row, coin, no_direction)
         print_directions(valid_directions)
         victory, col, row, no_direction = play_one_move(col, row, valid_directions, no_direction)
 
-    print("Victory! Total coins"+str(coin)+".")
+    print("Victory! Total coins "+str(coin)+".")
 
         
 def find_directions(col, row):
