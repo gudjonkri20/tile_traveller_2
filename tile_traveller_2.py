@@ -20,22 +20,22 @@ def lever_spot(col, row, coin, no_direction):
             lever = (input("Pull a lever (y/n): ").lower())
             if lever == 'y':
                 coin += 1
-                print ("You received 1 coin your total is now", coin),"."
+                print ("You received 1 coin, your total is now "+str(coin)+".")
         elif col == 2 and row == 2:
             lever = (input("Pull a lever (y/n):").lower())
             if lever == 'y':
                 coin += 1
-                print ("You received 1 coin your total is now", coin),"."
+                print ("You received 1 coin, your total is now "+str(coin)+".")
         elif col == 2 and row == 3:
-            lever = (input("Pull a lever (y/n): ".lower()))
+            lever = (input("Pull a lever (y/n): ").lower())
             if lever == 'y':
                 coin += 1
-                print ("You received 1 coin your total is now", coin,".")
+                print ("You received 1 coin, your total is now "+str(coin)+".")
         elif col == 3 and row == 2:
             lever = (input("Pull a lever (y/n): ").lower())
             if lever == 'y':
                 coin += 1
-                print ("You received 1 coin your total is now", coin,".")
+                print ("You received 1 coin, your total is now "+str(coin)+".")
     else:
         pass
     return coin
@@ -66,7 +66,7 @@ def main():
         print_directions(valid_directions)
         victory, col, row, no_direction = play_one_move(col, row, valid_directions, no_direction)
 
-    print("Victory! Total coins", coin,".")
+    print("Victory! Total coins"+str(coin)+".")
 
         
 def find_directions(col, row):
