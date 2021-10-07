@@ -14,15 +14,13 @@ available actions.
 
 When a victory has been reached, the program also prints out how many coins the player retrieved.'''
 
-def lever_spot(col, row):
-    coin = 0
+def lever_spot(col, row, coin):
+    
     if col == 1 and row == 2:
         lever = (input("Pull the lever? (y/n)"))
         if lever == 'y':
             coin += 1
-            coin += 1
             print ("You recieved 1 coin your total is now", coin)
-
     elif col == 2 and row == 2:
         lever = (input("Pull the lever? (y/n)"))
         if lever == 'y':
@@ -57,16 +55,16 @@ def main():
     victory = False
     row = 1
     col = 1
+    coin = 0
     
 
     while not victory:
         valid_directions = find_directions(col, row)
-        pull_lever = lever_spot(col, row, )
-            
+        coin = lever_spot(col, row, coin)
         print_directions(valid_directions)
         victory, col, row = play_one_move(col, row, valid_directions)
 
-    print("Victory! Total coins: ", pull_lever)
+    print("Victory! Total coins: ", coin)
 
         
 def find_directions(col, row):
